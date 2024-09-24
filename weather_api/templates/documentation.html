@@ -10,25 +10,33 @@
     <title>Documentation - Weather Data API</title>
 </head>
 <body>
-    <h1 class="container">Historical Weather Data API</h1>
-
     <div class="container">
-        <h4>Search for a particular date and station: http://127.0.0.1:8000/v1/api/{station ID}/{date: YYYY-MM-DD} <br>
+        <h1>Historical Weather Data API</h1>
+
+        <h4>
+            Search for a particular date and station: http://127.0.0.1:8000/v1/api/{station ID}/{date: YYYY-MM-DD} <br>
                 Example: <a href="http://127.0.0.1:8000/v1/api/10/1992-05-19">http://127.0.0.1:8000/v1/api/10/1992-05-19</a>
         </h4>
 
-        <h4>Search for a particular year and station: http://127.0.0.1:8000/api/v1/yearly/{station ID}/{year} <br>
+        <h4>
+            Search for a particular year and station: http://127.0.0.1:8000/api/v1/yearly/{station ID}/{year} <br>
                 Example: <a href="http://127.0.0.1:8000/v1/api/yearly/10/1992">http://127.0.0.1:8000/v1/api/yearly/10/1992</a>
         </h4>
 
-        <h4>Search for a particular station all years: http://127.0.0.1:8000/v1/api/{station ID} <br>
+        <h4>
+            Search for a particular station all years: http://127.0.0.1:8000/v1/api/{station ID} <br>
                 Example: <a href="http://127.0.0.1:8000/v1/api/10">http://127.0.0.1:8000/v1/api/10</a>
         </h4>
 
-    </div>
+        <h3>
+            Available Stations:
+        </h3>
 
-    <h3 class="container">Available Stations:</h3>
-    <div class="container"> <h4> {{ stations | safe }} </h4> </div>
+        <h4>
+            {{ stations | safe }}
+        </h4>
+
+    </div>
 
 </body>
 </html>
