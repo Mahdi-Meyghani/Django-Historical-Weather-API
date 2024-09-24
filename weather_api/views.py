@@ -9,7 +9,10 @@ def documentation(request):
 
 
 def station(request, staid):
-    filepath = f'data/TG_STAID{staid.zfill(6)}.txt'
+    try:
+        filepath = f'data/TG_STAID{staid.zfill(6)}.txt'
+    except FileNotFoundError:
+        return render(request, 'documentation.html')
 
     station_df = pd.read_csv(filepath, skiprows=20)
     station_df.columns = map(str.strip, station_df.columns)
@@ -24,3 +27,7 @@ def station(request, staid):
     response = JsonResponse(df_dictionary, status=200, safe=False)
 
     return response
+
+
+def error_500(request):
+    return render(request, 'error_500.html', status=500)
