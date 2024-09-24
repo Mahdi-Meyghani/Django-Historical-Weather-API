@@ -11,19 +11,19 @@ This app is built using Python and Django, providing a REST API for accessing hi
 ## API Endpoints
 
 1. **Get all temperature data for a specific station:**
-- GET `http://127.0.0.1:8000/v1/api/{station ID}` 
+- GET `http://localhost:8000/v1/api/{station ID}` 
 - Example: http://127.0.0.1:8000/v1/api/10
 
 2. **Get temperature data for a specific station on a specific day:**
-- GET ` http://127.0.0.1:8000/v1/api/{station ID}/{date: YYYY-MM-DD}` 
+- GET ` http://localhost:8000/v1/api/{station ID}/{date: YYYY-MM-DD}` 
 - Example: http://127.0.0.1:8000/v1/api/10/1992-05-19
 
 3. **Get all temperature data for a specific year:**
-- GET `http://127.0.0.1:8000/v1/api/yearly/{station ID}/{year: YYYY}` 
+- GET `http://localhost:8000/v1/api/yearly/{station ID}/{year: YYYY}` 
 - Example: http://127.0.0.1:8000/v1/api/yearly/10/1992
 
 4. **Get all temperature data for a specific month on a specific year:**
-- GET `http://127.0.0.1:8000/v1/api/yearly/{station ID}/{year: YYYY}-{month: MM}` 
+- GET `http://localhost:8000/v1/api/yearly/{station ID}/{year: YYYY}-{month: MM}` 
 - Example: http://127.0.0.1:8000/v1/api/yearly/10/1992-10
 
 ## Documentation
