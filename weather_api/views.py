@@ -45,5 +45,24 @@ def station_date(request, staid, date):
     return response
 
 
+def station_year(request, staid, year):
+    filepath = f'data/TG_STAID{staid.zfill(6)}.txt'
+
+    station_df = pd.read_csv(filepath, skiprows=20)
+    station_df.columns = map(str.strip, station_df.columns)
+    station_df['DATE'] = pd.to_datetime(station_df['DATE'], format='%Y%m%d')
+    station_df['DATE'] = station_df['DATE'].astype(str)
+
+    year_station_df = station_df.loc[station_df['DATE'].str.startswith(year)][['DATE', 'TG']]
+    year_station_df['TG'] = year_station_df['TG'] / 10
+    year_station_df['TG'] = year_station_df['TG'].replace({-999.9: "LOST"})
+
+    year_station_dict = year_station_df.to_dict('records')
+    response = JsonResponse(year_station_dict, status=200, safe=False)
+
+    return response
+
+
+
 def error_500(request):
     return render(request, 'error_500.html', status=500)
