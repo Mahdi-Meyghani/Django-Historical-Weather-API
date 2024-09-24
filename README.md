@@ -28,7 +28,7 @@ This app is built using Python and Django, providing a REST API for accessing hi
 
 ## Documentation
 
-Comprehensive documentation is available at the main URL: `http://127.0.0.1:8000`
+Comprehensive documentation is available at the main URL: `http://localhost:8000` or `http://127.0.0.1:8000`
 
 This includes details on how to use the API, URL formats, examples, and a list of all available stations.
 
