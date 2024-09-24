@@ -65,6 +65,5 @@ def station_year(request, staid, year):
     return response
 
 
-
 def error_500(request):
     return render(request, 'error_500.html', status=500)
