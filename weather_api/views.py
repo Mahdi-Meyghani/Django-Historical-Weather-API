@@ -9,12 +9,15 @@ def dataframe_operations(dataframe):
     dataframe['DATE'] = pd.to_datetime(dataframe['DATE'], format='%Y%m%d')
     dataframe['DATE'] = dataframe['DATE'].astype(str)
 
+
 def dataframe_modified(dataframe):
     dataframe['TG'] = dataframe['TG'] / 10
     dataframe['TG'] = dataframe['TG'].replace({-999.9: "LOST"})
 
 
 df = pd.read_csv('data/stations.txt', skiprows=17)
+
+
 def documentation(request):
     return render(request, 'documentation.html',
                   context={'stations': df.to_html(index=False, col_space=130)})
