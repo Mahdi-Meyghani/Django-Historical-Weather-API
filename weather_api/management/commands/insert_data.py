@@ -25,16 +25,15 @@ class Command(BaseCommand):
             df['DATE'] = df['DATE'].astype(str)
             df['TG'] = df['TG'] / 10
 
-            for index, row in df.iterrows():
-                self.stdout.write("Start insert that df in model")
-                self.stdout.write("======================================================")
+            self.stdout.write("Start bulk_create dataframe")
+            self.stdout.write("======================================================")
 
-                weatherdata = WeatherData(
-                    STAID=row['STAID'], SOUID=row['SOUID'], DATE=row['DATE'], TG=row['TG'], Q_TG=row['Q_TG']
-                )
-                weatherdata.save()
+            WeatherData.objects.bulk_create([WeatherData(
+                STAID=row['STAID'], SOUID=row['SOUID'], DATE=row['DATE'], TG=row['TG'], Q_TG=row['Q_TG'])
+                for index, row in df.iterrows()
+            ])
 
-                self.stdout.write("Finish insert that df in model")
-                self.stdout.write("======================================================")
+            self.stdout.write("Finish bulk_create")
+            self.stdout.write("======================================================")
 
         print("We are Done man :)")
