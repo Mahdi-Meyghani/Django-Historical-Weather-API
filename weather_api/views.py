@@ -4,8 +4,11 @@ from .serializers import WeatherDataSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import WeatherData
+from .models import AvailableStations
 
-df = pd.read_csv('data/stations.txt', skiprows=17)
+
+queryset = AvailableStations.objects.all().values()
+df = pd.DataFrame(queryset).drop(["id"], axis=1)
 
 
 def documentation(request):
