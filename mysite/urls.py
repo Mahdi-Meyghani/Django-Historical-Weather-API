@@ -18,8 +18,6 @@ from django.conf.urls import handler500
 from django.contrib import admin
 from django.urls import path, include
 
-handler500 = 'weather_api.views.error_500'
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('weather_api.urls')),
