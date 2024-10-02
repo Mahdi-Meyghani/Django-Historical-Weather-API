@@ -1,6 +1,6 @@
 # Historical Weather Data REST API
 
-This application is a RESTful API that provides historical weather data, specifically temperature, for various cities across Europe. The app is built using Python, Django, Django REST Framework, and PostgreSQL for data storage.
+This application is a RESTful API that provides historical weather data, specifically temperature, for various cities. The app is built using Python, Django, Django REST Framework, and PostgreSQL for data storage.
 
 ## Features
 
