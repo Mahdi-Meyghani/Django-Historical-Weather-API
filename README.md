@@ -4,7 +4,7 @@ This application is a RESTful API that provides historical weather data, specifi
 
 ## Features
 
-- Retrieve historical temperature data for specific cities (stations) in Europe.
+- Retrieve historical temperature data for specific cities (stations).
 - Supports querying data by:
   1. **Station ID** for all historical data.
   2. **Station ID and Year** for all temperature data for a specific year.
